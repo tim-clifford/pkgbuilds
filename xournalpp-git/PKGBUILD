@@ -5,13 +5,13 @@
 _pkgname="xournalpp"
 pkgname="${_pkgname}-git"
 
-pkgver=1.1.0.r104.gc6ae5c7fc
+pkgver=1.0.15.r1104.g2364ecbc
 pkgrel=1
 pkgdesc='Xournal++ is a handwriting Notetaking software with PDF annotation support. Supports Pen input like Wacom Tablets.'
 arch=('i686' 'x86_64' 'aarch64')
 url="https://github.com/tim-clifford/xournalpp"
 license=('GPL2')
-makedepends=('git' 'cmake' 'help2man')
+makedepends=('git' 'cmake' 'help2man' 'gtest')
 depends=('texlive-bin' 'gtk3' 'poppler-glib' 'libxml2' 'portaudio' 'libsndfile' 'lua53' 'lua53-lgi' 'libzip')
 conflicts=('xournalpp')
 source=("${_pkgname}::git+${url}.git")
@@ -19,7 +19,7 @@ sha256sums=('SKIP')
 
 pkgver() {
 	cd "${srcdir}/${_pkgname}/"
-	git describe --long --tags --exclude nightly | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+	git describe --long --tags --exclude nightly | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 prepare() {

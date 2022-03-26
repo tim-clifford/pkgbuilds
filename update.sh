@@ -41,4 +41,4 @@ then
 fi
 
 # haskell-language-server-static
-echo -e "\\e[33m====> haskell-language-server-static must be edited manually\\e[0m"
+#echo -e "\\e[33m====> haskell-language-server-static must be edited manually\\e[0m"
