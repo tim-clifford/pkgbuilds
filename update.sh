@@ -9,7 +9,7 @@ git remote add upstream https://github.com/xournalpp/xournalpp.git
 git fetch upstream
 git rebase upstream/master
 read -p "Ok? (y/N) " yn
-if echo $yn | egrep -q '^(y|Y)'; then
+if echo $yn | grep -Eq '^(y|Y)'; then
 	if ! git push -f origin master; then
 		exit 1
 	fi
